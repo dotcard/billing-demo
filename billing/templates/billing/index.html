@@ -1,0 +1,15 @@
+﻿<title>Список пользователей</title>
+<h2>Пользователи:</h2>
+{% if customers_list %}
+  <table border CELLSPACING=0>
+    {% for cust in customers_list %}
+        <tr>
+          <td><a href="{% url 'detail' cust.id %}">{{cust.fname}} {{cust.lname}}</a></td>
+          <td>{{cust.tariff}}</td>
+          <td>{{cust.tariff.price}} руб./мес</td>
+        </tr>
+    {% endfor %}
+  </table>
+{% else %}
+    <p>Нет клиентов. Надо искать.</p>
+{% endif %}
