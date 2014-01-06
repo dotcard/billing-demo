@@ -7,4 +7,6 @@ urlpatterns = patterns('',
     url(r'^billing/', include('billing.urls')),
     url(r'^billing', include('billing.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin', include(admin.site.urls)),
+    url(r'^', 'views.main'),
 )
